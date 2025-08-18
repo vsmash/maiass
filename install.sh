@@ -17,6 +17,70 @@ INSTALL_DIR="$HOME/.local/bin"
 SCRIPT_NAME="maiass"
 SCRIPT_FILE="maiass.sh"
 
+# GitHub release info
+GITHUB_REPO="vsmash/maiass"
+
+fetch_latest_tag() {
+    # Prefer gh if available
+    if command -v gh >/dev/null 2>&1; then
+        gh release list --repo "$GITHUB_REPO" --limit 1 --json tagName --jq '.[0].tagName' 2>/dev/null || true
+        return
+    fi
+    # Fallback to GitHub API
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "https://api.github.com/repos/$GITHUB_REPO/releases/latest" | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\(v\?[^\"]*\)".*/\1/p' | head -n1
+    elif command -v wget >/dev/null 2>&1; then
+        wget -qO- "https://api.github.com/repos/$GITHUB_REPO/releases/latest" | sed -n 's/.*"tag_name"[[:space:]]*:[[:space:]]*"\(v\?[^\"]*\)".*/\1/p' | head -n1
+    fi
+}
+
+download_and_prepare_from_release() {
+    local tag version archive_url tmpdir extract_dir inst_dir
+    tag=$(fetch_latest_tag)
+    if [[ -z "$tag" ]]; then
+        print_error "Failed to determine latest release tag from GitHub"
+        exit 1
+    fi
+    version="${tag#v}"
+    archive_url="https://github.com/$GITHUB_REPO/releases/download/${tag}/maiass-${version}.tar.gz"
+
+    tmpdir=$(mktemp -d)
+    extract_dir="$tmpdir/extract"
+    mkdir -p "$extract_dir"
+    print_info "Downloading MAIASS v$version release..."
+    if command -v curl >/dev/null 2>&1; then
+        curl -fsSL "$archive_url" -o "$tmpdir/maiass.tar.gz"
+    else
+        wget -qO "$tmpdir/maiass.tar.gz" "$archive_url"
+    fi
+    if [[ ! -s "$tmpdir/maiass.tar.gz" ]]; then
+        print_error "Failed to download release archive"
+        exit 1
+    fi
+    tar -xzf "$tmpdir/maiass.tar.gz" -C "$extract_dir"
+
+    # Find the directory containing maiass.sh (supports typical archive structures)
+    inst_file=$(find "$extract_dir" -maxdepth 3 -type f -name "$SCRIPT_FILE" 2>/dev/null | head -n1)
+    if [[ -n "$inst_file" ]]; then
+        inst_dir="$(dirname "$inst_file")"
+    else
+        inst_dir=""
+    fi
+    if [[ -z "$inst_dir" ]]; then
+        # Fallback: if archive has top-level bashmaiass folder
+        if [[ -f "$extract_dir/bashmaiass/$SCRIPT_FILE" ]]; then
+            inst_dir="$extract_dir/bashmaiass"
+        fi
+    fi
+    if [[ -z "$inst_dir" ]]; then
+        print_error "Could not locate $SCRIPT_FILE in the release archive"
+        exit 1
+    fi
+
+    # Export for use in install_script
+    EXTRACTED_SOURCE_DIR="$inst_dir"
+}
+
 # committhis install variables
 committhis_SCRIPT_NAME="committhis.sh"
 committhis_SYMLINK="committhis"
@@ -83,16 +147,17 @@ create_install_directory() {
 }
 
 install_script() {
+    local source_dir="."
     if [[ ! -f "$SCRIPT_FILE" ]]; then
-        print_error "Cannot find $SCRIPT_FILE in current directory"
-        print_info "Please run this installer from the maiass repository directory"
-        exit 1
+        print_info "Local $SCRIPT_FILE not found; fetching latest release from GitHub..."
+        download_and_prepare_from_release
+        source_dir="$EXTRACTED_SOURCE_DIR"
     fi
 
     print_info "Installing $SCRIPT_FILE to $INSTALL_DIR/$SCRIPT_NAME"
 
     # Copy script to install directory
-    cp "$SCRIPT_FILE" "$INSTALL_DIR/$SCRIPT_NAME"
+    cp "$source_dir/$SCRIPT_FILE" "$INSTALL_DIR/$SCRIPT_NAME"
 
     # create symlink in install dir for myass because it's easier to type
     ln -sf "$INSTALL_DIR/$SCRIPT_NAME" "$INSTALL_DIR/myass"
@@ -103,9 +168,9 @@ install_script() {
     print_success "Installed $SCRIPT_NAME to $INSTALL_DIR"
 
     # --- committhis.sh install ---
-    if [[ -f "$committhis_SCRIPT_NAME" ]]; then
+    if [[ -f "$source_dir/$committhis_SCRIPT_NAME" ]]; then
         print_info "Installing $committhis_SCRIPT_NAME to $INSTALL_DIR/$committhis_SCRIPT_NAME"
-        cp "$committhis_SCRIPT_NAME" "$INSTALL_DIR/$committhis_SCRIPT_NAME"
+        cp "$source_dir/$committhis_SCRIPT_NAME" "$INSTALL_DIR/$committhis_SCRIPT_NAME"
         chmod +x "$INSTALL_DIR/$committhis_SCRIPT_NAME"
         ln -sf "$INSTALL_DIR/$committhis_SCRIPT_NAME" "$INSTALL_DIR/$committhis_SYMLINK"
         print_success "Installed $committhis_SCRIPT_NAME and symlinked as $committhis_SYMLINK"
