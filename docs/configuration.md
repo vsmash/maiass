@@ -55,7 +55,6 @@ MAIASS_MASTERBRANCH=main
 # .env file - full configuration example (most users won't need all of these)
 
 # AI Configuration
-MAIASS_AI_TOKEN=your_openai_api_key_here
 MAIASS_AI_MODE=ask                    # Default: off
 MAIASS_AI_MODEL=gpt-4o               # Default: gpt-4o
 MAIASS_AI_COMMIT_MESSAGE_STYLE=bullet # Default: bullet

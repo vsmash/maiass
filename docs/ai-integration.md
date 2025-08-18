@@ -20,7 +20,6 @@ Add your API key to your `.env` file for your project or globally in `~/.maiass.
 Only `MAIASS_AI_TOKEN` is required. Other settings have defaults but can be overridden:
 ```bash
 # AI Configuration
-MAIASS_AI_TOKEN=your_api_key_here
 MAIASS_AI_MODE=autosuggest
 MAIASS_AI_MODEL=gpt-4o
 MAIASS_AI_COMMIT_MESSAGE_STYLE=bullet

@@ -8,7 +8,7 @@
 ## 🚀 Features
 
 - 🔍 Analyzes your staged changes
-- 🧠 Uses OpenAI (GPT-4o by default) to suggest commit messages
+- 🧠 Uses OpenAI (GPT-4 by default) to suggest commit messages
 - ✍️ Outputs messages in configurable styles:
     - `bullet` (default)
     - `conventional`
