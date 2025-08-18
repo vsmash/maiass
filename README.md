@@ -1,7 +1,7 @@
 ![MAIASS Banner](https://raw.githubusercontent.com/vsmash/maiass/main/assets/maiassbanner2.png)
 
 <div align="center">
-# MAIASS v5.7.0
+# MAIASS v5.8.13
 Modular AI-Augmented Semantic Scribe
 
 ---
@@ -9,7 +9,7 @@ Modular AI-Augmented Semantic Scribe
 
 ### 👩‍💻 Are you tired of switching from code-mode to explain-brain?
 
-### 🧑‍💼 Are you sick of opening a repo and finding 20 commits named “bugfix”?
+### 🧑‍💼 Are you sick of opening a repo and finding 20 commits named “fix”?
 
 ### 🧠 Wanna keep your code-mode going and leave your explain-brain to ai at commit time?
 ### 🌟 You deserve structure.

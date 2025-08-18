@@ -1,0 +1,64 @@
+Business Source License 1.1
+
+Parameters
+----------
+Licensor: Velvary Pty Ltd
+Licensed Work: MAIASS (Modular AI-Assisted Semantic Sidekick)
+Additional Use Grant: You may use the Licensed Work to develop and test integrations and to run non-commercial internal workloads. The Licensed Work must not be used to access or integrate with non-authorized AI providers prior to the Change Date.
+Change Date: 2028-01-01
+Change License: Apache License, Version 2.0
+
+---
+
+Business Source License 1.1 (Text)
+---------------------------------
+
+This Business Source License (the “License”) is an agreement between the Licensor and You (the individual or entity exercising the rights granted by this License). The Licensed Work is made available under the terms of this License. Any use of the Licensed Work other than as authorized under this License is prohibited.
+
+1. Grant of Rights
+Subject to the terms and conditions of this License, Licensor grants You a non-exclusive, worldwide, non-transferable, non-sublicensable, royalty-free license to:
+- copy, modify, create derivative works of, and make non-production use of the Licensed Work; and
+- distribute the Licensed Work and derivative works for non-production use.
+
+“Non-production use” means any use that is not Production Use.
+
+2. Production Use
+“Production Use” means use of the Licensed Work, within or for the benefit of an organization, in or for a commercial product, service, or application, or in a production environment. Except as expressly permitted by Section 3 (Additional Use Grant), You may not use the Licensed Work for Production Use under this License prior to the Change Date.
+
+3. Additional Use Grant (Optional)
+If the Additional Use Grant above is not “None,” then, notwithstanding Section 2, You may exercise the rights granted in that Additional Use Grant before the Change Date.
+
+4. Distribution; Notice; Compliance
+If You distribute the Licensed Work or any derivative work, You must:
+- provide a copy of this License;
+- provide prominent notice identifying the Licensed Work, the Licensor, and any modifications You made; and
+- not remove or alter any copyright, patent, trademark, or attribution notices.
+
+If You offer or make available the Licensed Work (or any substantial portion) to third parties as part of a product or service prior to the Change Date, that is Production Use and not permitted except as allowed by Section 3.
+
+5. Patent Grant
+Subject to the terms and conditions of this License, Licensor grants You a non-exclusive, worldwide, royalty-free patent license under Licensor’s patent claims that are necessarily infringed by the Licensed Work as released by Licensor, to make, use, sell, offer to sell, import, and otherwise transfer the Licensed Work for non-production use prior to the Change Date, and under the Change License after the Change Date.
+
+6. No Trademark License
+This License does not grant permission to use the trade names, trademarks, service marks, or product names of the Licensor, except as required for reasonable and customary use in describing the origin of the Licensed Work and reproducing the content of notices.
+
+7. Termination
+If You breach this License, Your rights under this License terminate automatically and permanently. If You become compliant, rights may be reinstated prospectively at Licensor’s discretion.
+
+8. Change Date and Change License
+On the Change Date, this License automatically and permanently terminates and is replaced by the Change License for the Licensed Work. After the Change Date, the Licensed Work is licensed to You under the Change License.
+
+9. Disclaimer of Warranty
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE LICENSED WORK IS PROVIDED “AS IS,” WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF TITLE, NON-INFRINGEMENT, MERCHANTABILITY, AND FITNESS FOR A PARTICULAR PURPOSE.
+
+10. Limitation of Liability
+TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT WILL LICENSOR BE LIABLE FOR ANY DAMAGES OR OTHER LIABILITY, WHETHER IN CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE LICENSED WORK OR THIS LICENSE, INCLUDING WITHOUT LIMITATION ANY INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES.
+
+11. General
+If any provision of this License is unenforceable, the remaining provisions will remain in full effect. This License is governed by the laws applicable to the Licensor’s principal place of business, excluding its conflict-of-law rules.
+
+---
+
+Appendix – Purpose of the Business Source License
+-------------------------------------------------
+The Business Source License is intended to make source code available for non-production use, while deferring broad open-source rights until the Change Date, at which time the Change License applies.
