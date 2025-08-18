@@ -199,7 +199,7 @@ maiass patch
 
 ### AI Integration Issues
 
-#### "OpenAI API key not found"
+#### "AI API key not found"
 **Symptoms**: AI features don't work, API key errors.
 
 **Solutions**:
@@ -211,7 +211,7 @@ maiass patch
 
 2. **Check .env file**:
    ```bash
-   cat .env | grep OPENAI
+   cat .env | grep AI
    # Should show: MAIASS_AI_TOKEN=sk-...
    ```
 
@@ -227,13 +227,13 @@ maiass patch
 **Solutions**:
 1. **Check internet connectivity**:
    ```bash
-   curl -I https://api.openai.com
+   curl -I https://api.AI.com
    ```
 
 2. **Verify API key validity**:
    ```bash
    curl -H "Authorization: Bearer $MAIASS_AI_TOKEN" \
-        https://api.openai.com/v1/models
+        https://api.AI.com/v1/models
    ```
 
 3. **Try different model**:
@@ -241,8 +241,8 @@ maiass patch
    export MAIASS_AI_MODEL="gpt-3.5-turbo"
    ```
 
-4. **Check OpenAI account credits**:
-   - Visit [OpenAI Platform](https://platform.openai.com/)
+4. **Check AI account credits**:
+   - Visit [AI Platform](https://platform.AI.com/)
    - Check usage and billing
 
 #### "No changes to analyze" for AI

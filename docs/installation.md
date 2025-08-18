@@ -7,7 +7,7 @@
 - **Shell:** Bash 3.2 or later (macOS default bash supported)
 - **Git:** Git command-line tools installed
 - **jq:** JSON processor (required for AI features)
-- **Optional:** OpenAI API key for AI features
+- **Optional:** AI API key for AI features
 
 ### Platform Compatibility
 
@@ -51,7 +51,7 @@ sudo apk add jq
 
 ```bash
 # Add the tap
-brew tap vsmash/homebrew-maiass
+brew tap vsmash/maiass
 
 # Install maiass
 brew install maiass
@@ -97,5 +97,5 @@ maiass --help
 ## Next Steps
 
 - See [Configuration](configuration.md) for setting up your environment
-- See [AI Integration](ai-integration.md) for OpenAI setup
+- See [AI Integration](ai-integration.md) for AI setup
 - See [Quick Start](#) in the main README for basic usage

@@ -5,7 +5,7 @@
 **MAIASS works out of the box with sensible defaults.** You don't need to create any configuration files unless you want to:
 
 - **Override default branch names** (if your project uses different branch names)
-- **Enable AI features** (set OpenAI API token globally in `~/.maiass.env`)
+- **Enable AI features** (set AI API token globally in `~/.maiass.env`)
 - **Customize version file handling** (for non-standard project structures)
 - **Modify workflow behavior** (disable pull requests, change verbosity, etc.)
 
@@ -19,7 +19,7 @@
 
 ### ⚙️ You DO need configuration if:
 - Your project uses different branch names (e.g., `main` instead of `master`) → **Project-level** `.env`
-- You want AI-powered commit messages (set OpenAI API token) → **Global** `~/.maiass.env`
+- You want AI-powered commit messages (set AI API token) → **Global** `~/.maiass.env`
 - You have custom version files or multiple version files to update → **Project-level** `.env`
 - You want to disable pull request creation or modify other behaviors → **Project-level** `.env`
 
@@ -103,9 +103,9 @@ MAIASS_BROWSER_PROFILE="Work"            # Default: Default
 
 | Variable | Default | Description |
 |----------|---------|-------------|
-| `MAIASS_AI_TOKEN` | *(none)* | OpenAI API token (required for AI features) |
+| `MAIASS_AI_TOKEN` | *(none)* | AI API token (required for AI features) |
 | `MAIASS_AI_MODE` | `off` | AI mode: `off`, `ask`, `autosuggest` |
-| `MAIASS_AI_MODEL` | `gpt-4o` | OpenAI model: `gpt-4o`, `gpt-4`, `gpt-3.5-turbo` |
+| `MAIASS_AI_MODEL` | `gpt-4o` | AI model: `gpt-4o`, `gpt-4`, `gpt-3.5-turbo` |
 | `MAIASS_AI_COMMIT_MESSAGE_STYLE` | `bullet` | Commit message style: `bullet`, `conventional`, `simple` |
 
 ### Repository Integration Variables

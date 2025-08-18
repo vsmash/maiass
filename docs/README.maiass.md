@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# MAIASS v5.9.1
+# MAIASS v5.9.2
 **Modular AI-Augmented Semantic Scribe**
 
 ---
@@ -16,7 +16,7 @@
 ## 🚀 Key Features
 
 - **Intelligent Version Management**: Automatic semantic versioning with support for multiple file formats
-- **AI-Powered Commit Messages**: Optional OpenAI integration for intelligent commit message generation
+- **AI-Powered Commit Messages**: Optional AI integration for intelligent commit message generation
 - **Automated Changelog Generation**: Keep your project history organized and professional
 - **Multi-Platform Git Integration**: Works with GitHub, Bitbucket, and any Git repository
 - **Flexible Workflow Support**: Adapts to Git Flow, GitHub Flow, or custom branching strategies
@@ -89,17 +89,17 @@ maiass patch
 
 ## 📚 Documentation
 
-| Topic | Description |
-|-------|-------------|
-| **[Installation Guide](installation.md)** | Detailed installation instructions and prerequisites |
-| **[Configuration](configuration.md)** | Environment variables and project setup |
-| **[AI Integration](ai-integration.md)** | OpenAI setup and AI-powered features |
-| **[Version Management](versioning.md)** | Version file formats and semantic versioning |
-| **[Pull Requests](prs.md)** | GitHub/Bitbucket integration and workflows |
-| **[Advanced Usage](advanced.md)** | Complex workflows and enterprise features |
-| **[Changelog Management](changelogging.md)** | Automatic changelog generation and formatting |
-| **[FAQ](faq.md)** | Frequently asked questions and common scenarios |
-| **[Troubleshooting](troubleshooting.md)** | Common issues and debugging guide |
+| Topic                                             | Description |
+|---------------------------------------------------|-------------|
+| **[Installation Guide](docs/installation.md)**    | Detailed installation instructions and prerequisites |
+| **[Configuration](docs/configuration.md)**        | Environment variables and project setup |
+| **[AI Integration](docs/ai-integration.md)**      | AI setup and AI-powered features |
+| **[Version Management](docs/versioning.md)**      | Version file formats and semantic versioning |
+| **[Pull Requests](docs/prs.md)**                  | GitHub/Bitbucket integration and workflows |
+| **[Advanced Usage](docs/advanced.md)**            | Complex workflows and enterprise features |
+| **[Changelog Management](docs/changelogging.md)** | Automatic changelog generation and formatting |
+| **[FAQ](docs/faq.md)**                            | Frequently asked questions and common scenarios |
+| **[Troubleshooting](docs/troubleshooting.md)**    | Common issues and debugging guide |
 
 ---
 
@@ -161,7 +161,7 @@ MAIASS is released under the [GNU General Public License v3.0](LICENSE). Free an
 - [GitHub Repository](https://github.com/vsmash/maiass)
 - [Issue Tracker](https://github.com/vsmash/maiass/issues)
 - [Discussions](https://github.com/vsmash/maiass/discussions)
-- [Homebrew Formula](https://github.com/vsmash/homebrew-maiass)
+- [Homebrew Formula](https://github.com/vsmash/maiass)
 
 ---
 
@@ -181,7 +181,7 @@ brew tap vsmash/maiass && brew install maiass
 
 ## 🙏 Acknowledgments
 
-- OpenAI for GPT integration
+- AI for GPT integration
 - Git community for workflow inspiration
 - All contributors and testers
 

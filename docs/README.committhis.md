@@ -1,6 +1,6 @@
 # 🤖 committhis
 
-**committhis** is a streamlined AI-Augmented Git commit message tool, built for speed and semantic clarity. It uses OpenAI to analyze your changes and generate intelligent, well-formatted commit messages — so you can stay focused on writing code, not prose.
+**committhis** is a streamlined AI-Augmented Git commit message tool, built for speed and semantic clarity. It uses AI to analyze your changes and generate intelligent, well-formatted commit messages — so you can stay focused on writing code, not prose.
 
 > 🧠 Derived from the full-featured [MAIASS](https://github.com/vsmash/maiass) script, committhis is stripped down to do one thing extremely well: suggest commit messages based on your code diff.
 ---
@@ -8,7 +8,7 @@
 ## 🚀 Features
 
 - 🔍 Analyzes your staged changes
-- 🧠 Uses OpenAI (GPT-4 by default) to suggest commit messages
+- 🧠 Uses AI (GPT-4 by default) to suggest commit messages
 - ✍️ Outputs messages in configurable styles:
     - `bullet` (default)
     - `conventional`
@@ -57,7 +57,7 @@ committhis will:
 
 ## ⚙️ Configuration
 
-Set your OpenAI key and preferences via environment variables or a `.env` file in the repo root:
+Set your AI key and preferences via environment variables or a `.env` file in the repo root:
 
 ```bash
 export MAIASS_AI_TOKEN=your-api-key
@@ -90,9 +90,9 @@ $git_diff
 
 ---
 
-## 🔐 OpenAI Access
+## 🔐 AI Access
 
-You'll need an OpenAI API key. You can generate one from https://platform.openai.com/account/api-keys and export it as:
+You'll need an AI API key. You can generate one from https://platform.AI.com/account/api-keys and export it as:
 
 ```bash
 export MAIASS_AI_TOKEN=sk-...

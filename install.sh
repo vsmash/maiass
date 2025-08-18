@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# MAIASS Installation Script v5.9.1
+# MAIASS Installation Script v5.9.2
 # Installs maiass.sh to a system location and creates a symlink in PATH
 # use brew if osx or this for linux
 set -e
@@ -247,7 +247,7 @@ show_usage() {
     echo "  $SCRIPT_NAME 2.1.0        # Set specific version"
     echo "  $SCRIPT_NAME --help       # Show help"
     echo
-    echo "For AI-powered commit messages, set up your OpenAI API key:"
+    echo "For AI-powered commit messages, set up your AI API key:"
     echo "  export MAIASS_AI_MODE='ask'"
     echo
     print_info "See the README.md for complete configuration options"

@@ -2,13 +2,13 @@
 
 ## Overview
 
-MAIASS integrates with OpenAI to generate intelligent commit messages based on your code changes. This feature analyzes your git diff and creates contextually appropriate commit messages in various styles.
+MAIASS integrates with AI to generate intelligent commit messages based on your code changes. This feature analyzes your git diff and creates contextually appropriate commit messages in various styles.
 
 ## Setup
 
-### 1. Get an OpenAI API Key
+### 1. Get an AI API Key
 
-1. Visit [OpenAI Platform](https://platform.openai.com/)
+1. Visit [AI Platform](https://platform.AI.com/)
 2. Create an account or sign in
 3. Navigate to API Keys section
 4. Create a new API key
@@ -152,7 +152,7 @@ maiass minor
 
 ### Common Issues
 
-**"OpenAI API key not found"**
+**"AI API key not found"**
 - Verify `MAIASS_AI_TOKEN` is set correctly
 - Check `.env` file exists and is sourced
 - Ensure API key starts with `sk-`
@@ -182,11 +182,11 @@ maiass patch
 2. **Review suggestions** - AI is helpful but not perfect
 3. **Use appropriate styles** - `conventional` for formal projects, `bullet` for internal work
 4. **Stage meaningful changes** - AI works best with focused, logical changesets
-5. **Monitor API usage** - OpenAI charges per token, consider costs for heavy usage
+5. **Monitor API usage** - AI charges per token, consider costs for heavy usage
 
 ## Privacy and Security
 
-- **Code analysis**: Only git diff is sent to OpenAI, not full source code
+- **Code analysis**: Only git diff is sent to AI, not full source code
 - **API key security**: Store in `.env` files, never commit to repositories
 - **Local processing**: All git operations remain local
-- **No data retention**: OpenAI doesn't store your code diffs (per their API policy)
+- **No data retention**: AI doesn't store your code diffs (per their API policy)

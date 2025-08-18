@@ -6,7 +6,7 @@
 MAIASS stands for **Modular AI-Augmented Semantic Scribe**. It's a Git workflow automation script that intelligently handles version bumping, changelog management, and AI-powered commit messages.
 
 ### How do you pronounce it?
-However you would like to. I hope it introduces some mirth to your day on a regular basis.
+However you would like to. We hope it introduces some mirth to your day on a regular basis.
 
 ### What platforms does MAIASS support?
 MAIASS is designed for Unix-like environments:
@@ -15,20 +15,21 @@ MAIASS is designed for Unix-like environments:
 
 ### 🪟 What about Windows?
 This is not tested in Windows environments but I immediately realise that there would be issues with slashes and unicode. 
-Considering doing a powershell equivalent but no promises.
+We are working on a node equivalent but it would confine you to node 22 when your project might be using an older version.
 - **Windows with WSL** (untested)
 - **Git Bash on Windows** (untested)
 
-### Do I need an OpenAI API key to use MAIASS?
-No, the OpenAI integration is optional. MAIASS works perfectly without AI features:
+### Do I need an API key to use MAIASS?
+MAIASS works perfectly without AI features:
 - **With AI**: Get intelligent commit message suggestions
 - **Without AI**: Manual commit message entry (traditional workflow)
+- **No AI**: No API key required but you will be automatically allocated a key on first ai request. There will be a top up link in the console should you choose to use this feature.
 
 ## Installation & Setup
 
 ### How do I install MAIASS?
 There are two main methods:
-1. **Homebrew (recommended)**: `brew tap vsmash/homebrew-maiass && brew install maiass`
+1. **Homebrew (recommended)**: `brew tap vsmash/maiass && brew install maiass`
 2. **Manual installation**: Clone the repo and run `./install.sh`
 
 ### What dependencies does MAIASS require?
@@ -39,15 +40,15 @@ There are two main methods:
 - Standard Unix utilities (`grep`, `sed`, `awk`)
 
 ### How do I configure MAIASS for my project?
-Defaults are out of the box, but you can *override* variables per project by using `.env` file.
-Create a `.env` file in your project root with your preferred settings:
+Defaults are out of the box, but you can *override* variables per project by using `.maiass.env` file.
+Create a `.maiass.env` file in your project root with your preferred settings:
 ```bash
 # Basic configuration
 MAIASS_MASTERBRANCH=main
 MAIASS_AI_MODE=autosuggest
 ```
-You can also set global overrides and your openai token in your home directory in `.maiass.env`
-The `.env` file takes precedence over the `.maiass.env` file.
+You can also set global overrides and your AI token in your home directory in `.maiass.env`
+The local `maiass.env` file takes precedence over the `.maiass.env` file.
 
 ## Version Management
 
@@ -70,7 +71,6 @@ MAIASS follows [Semantic Versioning](https://semver.org/):
 - `maiass` or `maiass patch`: 1.2.3 → 1.2.4
 - `maiass minor`: 1.2.3 → 1.3.0
 - `maiass major`: 1.2.3 → 2.0.0
-- `maiass 2.1.0`: Set specific version
 
 ## Git Workflows
 
@@ -106,11 +106,9 @@ Yes! MAIASS works perfectly with local-only repositories:
 ## AI Features
 
 ### How do I set up AI commit messages?
-1. Get an OpenAI API key from [platform.openai.com](https://platform.openai.com/)
-2. Add to your `.env` in your project: `MAIASS_AI_TOKEN=your_key_here`, or in your shell profile: `export MAIASS_AI_TOKEN="your_key_here", or in your home directory in `.maiass.env`
-3. Set mode: `MAIASS_AI_MODE=autosuggest`. The default mode is 'ask' which will prompt you for approval.
-4. Set model: `MAIASS_AI_MODEL=gpt-3.5-turbo`. The default model is 'gpt-4o'.
-5. Set commit message style: `MAIASS_AI_COMMIT_MESSAGE_STYLE=bullet`. The default style is 'bullet'.
+1. type maiass --account-info to get your subscription details. you can use this to top up ai credits at https://maiass.net/top-up
+2. Set mode: `MAIASS_AI_MODE=autosuggest`. The default mode is `ask` which will prompt you for approval.
+4. Set model: `MAIASS_AI_MODEL=gpt-3.5-turbo`. The default model is `gpt-4`.
 
 ### What AI modes are available?
 - **`off`**: No AI assistance
@@ -123,10 +121,10 @@ Yes! MAIASS works perfectly with local-only repositories:
 - **`simple`**: Simple descriptive messages
 
 ### How much does the AI feature cost?
-Costs depend on OpenAI's pricing:
+Costs depend on AI's pricing:
 - **GPT-4o**: ~$0.01-0.03 per commit message
 - **GPT-3.5-turbo**: ~$0.001-0.003 per commit message
-- Only git diff is sent, not full source code
+- Only git diff is sent, not full source code. The size of the diff dictates the cost.
 
 ## Repository Compatibility
 
@@ -176,9 +174,8 @@ sudo yum install jq
 - Test with debug mode: `MAIASS_DEBUG=true maiass patch`
 
 ### AI features aren't working
-- Verify API key is set: `echo $MAIASS_AI_TOKEN`
 - Check internet connectivity
-- Ensure you have OpenAI credits
+- Ensure you have AI credits
 - Try a different model: `MAIASS_AI_MODEL=gpt-3.5-turbo`
 
 ## Advanced Usage

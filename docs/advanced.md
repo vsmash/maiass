@@ -275,7 +275,7 @@ git config gc.auto 256
 cp .env.development .env
 
 # Production (no API keys in repo)
-export MAIASS_AI_TOKEN="$(cat ~/.secrets/openai-key)"
+export MAIASS_AI_TOKEN="$(cat ~/.secrets/AI-key)"
 
 # CI/CD (use secret management)
 # Set MAIASS_AI_TOKEN in CI environment variables
@@ -317,7 +317,7 @@ grep -E "(ERROR|WARN|FAIL)" debug-*.log console-output.log
 
 ```bash
 # Test connectivity
-curl -I https://api.openai.com
+curl -I https://api.AI.com
 git ls-remote origin
 
 # Use proxy if needed
