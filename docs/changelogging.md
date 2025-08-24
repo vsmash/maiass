@@ -9,9 +9,11 @@ MAIASS provides changelog management functionality to track version history in y
 MAIASS automatically creates and updates changelog files:
 
 - **CHANGELOG.md**: Primary changelog file (created automatically)
-- **CHANGELOG\_internal.md**: Internal changelog with detailed commit information (updated only if it already exists)
+- **.CHANGELOG_internal.md**: Internal changelog with detailed commit information (updated only if it already exists)
 
 These files are updated on the `develop` branch, which MAIASS treats as the source of truth. To avoid merge conflicts or incorrect history, changelog edits should be made only on or from `develop`.
+
+Important: The internal changelog is a tracked source of truth on `develop` and should not be added to `.gitignore`. Control exposure via deployment tooling (e.g., CI rules) if needed.
 
 Each version bump includes:
 
@@ -61,8 +63,11 @@ export MAIASS_CHANGELOG_PATH="./docs"
 # Custom changelog filename
 export MAIASS_CHANGELOG_NAME="HISTORY.md"
 
-# Custom internal changelog filename
+# Internal changelog customization
+# Filename
 export MAIASS_CHANGELOG_INTERNAL_NAME="RELEASES.md"
+# Directory (defaults to MAIASS_CHANGELOG_PATH if not set)
+export MAIASS_CHANGELOG_INTERNAL_PATH="./docs"
 ```
 
 ## AI-Enhanced Changelog Generation

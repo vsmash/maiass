@@ -142,6 +142,13 @@ MAIASS_BROWSER_PROFILE="Work"            # Default: Default
 | `MAIASS_CHANGELOG_DATE_FORMAT` | `%Y-%m-%d` | Date format for changelog entries |
 | `MAIASS_CHANGELOG_TEMPLATE` | *(built-in)* | Custom changelog template |
 
+#### Internal Changelog (tracked on develop)
+
+The internal changelog is a tracked source of truth on `develop` and should not be added to `.gitignore`. Control exposure via deployment tooling (e.g., CI rules).
+
+- `MAIASS_CHANGELOG_INTERNAL_NAME` — Internal changelog filename (default: `.CHANGELOG_internal.md`)
+- `MAIASS_CHANGELOG_INTERNAL_PATH` — Internal changelog directory (defaults to `MAIASS_CHANGELOG_PATH` if unset)
+
 ## Output Control & Logging
 
 MAIASS provides configurable output verbosity and optional logging to help you control the amount of information displayed and maintain audit trails.
