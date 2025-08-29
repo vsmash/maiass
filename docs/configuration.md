@@ -18,10 +18,10 @@
 - You don't want AI-powered commit messages
 
 ### ⚙️ You DO need configuration if:
-- Your project uses different branch names (e.g., `main` instead of `master`) → **Project-level** `.env`
-- You want AI-powered commit messages (set AI API token) → **Global** `~/.maiass.env`
-- You have custom version files or multiple version files to update → **Project-level** `.env`
-- You want to disable pull request creation or modify other behaviors → **Project-level** `.env`
+- Your project uses different branch names (e.g., `main` instead of `master`) → **Project-level** `.env.maiass`
+- You want AI-powered commit messages (set AI API token) → **Global** `~/.maiass.env` or **Personal** `.env.maiass.local`
+- You have custom version files or multiple version files to update → **Project-level** `.env.maiass`
+- You want to disable pull request creation or modify other behaviors → **Project-level** `.env.maiass`
 
 ## Environment Configuration
 
@@ -30,8 +30,9 @@ MAIASS uses environment variables for configuration. You can set these in severa
 ### Configuration Priority
 
 1. **Global config**: `~/.maiass.env` (loaded first)
-2. **Project config**: `.env` in project root (overrides global)
-3. **Environment variables**: Direct exports (highest priority)
+2. **Project config**: `.env.maiass` in project root (overrides global, committed to repo)
+3. **Personal config**: `.env.maiass.local` in project root (overrides project config, ignored by git)
+4. **Environment variables**: Direct exports (highest priority)
 
 ## Configuration Examples
 
@@ -46,13 +47,21 @@ MAIASS_AI_MODE=ask
 
 ### Example 2: Project-Level Branch Override
 ```bash
-# .env file in project root - for projects using 'main' instead of 'master'
+# .env.maiass file in project root - for projects using 'main' instead of 'master'
 MAIASS_MASTERBRANCH=main
 ```
 
-### Example 3: Comprehensive Configuration
+### Example 3: Personal Development Overrides
 ```bash
-# .env file - full configuration example (most users won't need all of these)
+# .env.maiass.local file in project root - personal settings (ignored by git)
+MAIASS_AI_TOKEN=your_personal_api_key_here
+MAIASS_VERBOSITY=debug
+MAIASS_AI_MODE=autosuggest
+```
+
+### Example 4: Comprehensive Configuration
+```bash
+# .env.maiass file - full configuration example (most users won't need all of these)
 
 # AI Configuration
 MAIASS_AI_MODE=ask                    # Default: off
