@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# MAIASS v5.9.8
+# MAIASS v5.9.9
 **Modular AI-Augmented Semantic Scribe**
 
 ---
