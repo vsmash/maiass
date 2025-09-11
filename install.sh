@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# MAIASS Installation Script v5.9.12
+# MAIASS Installation Script v5.9.14
 # Installs maiass.sh to a system location and creates a symlink in PATH
 # use brew if osx or this for linux
 set -e
