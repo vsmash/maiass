@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# MAIASS v5.10.41
+# MAIASS v5.10.49
 **Modular AI-Augmented Semantic Scribe**
 
 ---
@@ -38,7 +38,7 @@ brew install maiass
 
 **One-line Install (curl):**
 ```bash
-curl -sSL https://github.com/vsmash/maiass/releases/download/v5.8.18/install.sh | bash
+curl -sSL https://github.com/vsmash/maiass/releases/download/v5.10.49/install.sh | bash
 ```
 
 **Manual Installation:**
@@ -177,11 +177,10 @@ brew tap vsmash/maiass && brew install maiass
 - **Issues**: Report bugs via GitHub Issues (include OS/shell info)
 - **Feature Requests**: Submit enhancement ideas
 - **Questions**: Start a GitHub Discussion
-- **Windows Users**: Use WSL or Git Bash for compatibility
+- **Windows Users**: We recommend the node version - `npm i -g maiass`
 
 ## 🙏 Acknowledgments
 
-- AI for GPT integration
 - Git community for workflow inspiration
 - All contributors and testers
 
