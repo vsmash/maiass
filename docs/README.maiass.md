@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# MAIASS v5.10.49
+# MAIASS v5.10.50
 **Modular AI-Augmented Semantic Scribe**
 
 ---
@@ -38,7 +38,7 @@ brew install maiass
 
 **One-line Install (curl):**
 ```bash
-curl -sSL https://github.com/vsmash/maiass/releases/download/v5.10.49/install.sh | bash
+curl -sSL https://github.com/vsmash/maiass/releases/download/v5.10.50/install.sh | bash
 ```
 
 **Manual Installation:**
