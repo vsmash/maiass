@@ -52,15 +52,10 @@ MAIASS_BITBUCKET_REPO_SLUG=your-repo-slug
 
 ### Pull Request Control
 
-Control when pull requests are offered:
-
-```bash
-# Enable/disable PR prompts for staging merges
-MAIASS_STAGING_PULLREQUESTS=on    # on, off
-
-# Enable/disable PR prompts for master merges
-MAIASS_MASTER_PULLREQUESTS=on     # on, off
-```
+> **Deprecated (MAI-63):** `MAIASS_STAGING_PULLREQUESTS` and
+> `MAIASS_MASTER_PULLREQUESTS` / `MAIASS_MAIN_PULLREQUESTS` are no longer read.
+> They were only consumed by the post-bump deploy menu, which has been removed
+> for parity with the node CLI. Setting them now has no effect.
 
 ## How It Works
 

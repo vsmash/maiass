@@ -73,10 +73,6 @@ MAIASS_DEVELOPBRANCH=develop             # Default: develop
 MAIASS_STAGINGBRANCH=staging             # Default: staging  
 MAIASS_MASTERBRANCH=main                 # Default: master (change to 'main' if needed)
 
-# Workflow Configuration (only set if changing defaults)
-MAIASS_STAGING_PULLREQUESTS=false       # Default: true (set to false to disable)
-MAIASS_MASTER_PULLREQUESTS=false        # Default: true (set to false to disable)
-
 # Output & Logging Configuration (only set if changing defaults)
 MAIASS_VERBOSITY=normal                  # Default: brief (options: brief, normal, debug)
 MAIASS_LOGGING=true                      # Default: false (set to true to enable)
@@ -102,11 +98,15 @@ MAIASS_BROWSER_PROFILE="Work"            # Default: Default
 | `MAIASS_DEVELOPBRANCH` | `develop` | Development branch name |
 | `MAIASS_STAGINGBRANCH` | `staging` | Staging branch name |
 | `MAIASS_MASTERBRANCH` | `master` | Production branch name |
-| `MAIASS_STAGING_PULLREQUESTS` | `true` | Enable pull requests for staging merges |
-| `MAIASS_MASTER_PULLREQUESTS` | `true` | Enable pull requests for master merges |
 | `MAIASS_VERBOSITY` | `brief` | Output verbosity: `brief`, `normal`, `debug` |
 | `MAIASS_LOGGING` | `false` | Enable logging to file |
 | `MAIASS_LOG_FILE` | `maiass.log` | Log file path |
+
+> **Deprecated (MAI-63):** `MAIASS_STAGING_PULLREQUESTS` and
+> `MAIASS_MASTER_PULLREQUESTS` / `MAIASS_MAIN_PULLREQUESTS` are no longer read.
+> They only fed the removed post-bump deploy menu; setting them now has no
+> effect. `MAIASS_STAGINGBRANCH` / `MAIASS_MASTERBRANCH` remain in use for
+> branch detection.
 
 ### AI Configuration Variables
 

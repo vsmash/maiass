@@ -12,14 +12,14 @@ MAIASS_DEVELOPBRANCH="develop"
 MAIASS_STAGINGBRANCH="staging"
 MAIASS_MASTERBRANCH="main"
 
-# Enable pull requests for each stage
-MAIASS_STAGING_PULLREQUESTS="true"
-MAIASS_MASTER_PULLREQUESTS="true"
-
 # Configure browser integration
 MAIASS_BROWSER="chrome"
 MAIASS_BROWSER_PROFILE="work"
 ```
+
+> **Deprecated (MAI-63):** `MAIASS_STAGING_PULLREQUESTS` and
+> `MAIASS_MASTER_PULLREQUESTS` / `MAIASS_MAIN_PULLREQUESTS` are no longer read.
+> They fed the removed post-bump deploy menu and now have no effect.
 
 **Workflow Example**:
 ```bash
@@ -247,10 +247,6 @@ release:
 export MAIASS_VERBOSITY="brief"      # Reduce output
 export MAIASS_AI_MODE="off"      # Skip AI processing
 export MAIASS_LOGGING="false"        # Disable logging
-
-# Skip unnecessary operations
-export MAIASS_STAGING_PULLREQUESTS="false"
-export MAIASS_MASTER_PULLREQUESTS="false"
 ```
 
 ### Large Repository Handling
