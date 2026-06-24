@@ -1,0 +1,6 @@
+# Never publish personal/local MAIASS config in the public dist.
+# maiass-dist is a generated release artifact (vsmash/maiass); deploy.sh's
+# `rm -rf ../maiass-dist/*` does not clear dotfiles, so guard against any stray
+# .env.maiass* being re-tracked by `git add .`.
+.env.maiass
+.env.maiass.*
