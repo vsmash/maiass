@@ -32,9 +32,11 @@
 
 **Homebrew (Recommended):**
 ```bash
-brew tap vsmash/maiass
+brew tap --trust vsmash/maiass   # --trust is required on Homebrew 6.0+
 brew install maiass
 ```
+
+> **Already installed before Homebrew 6.0?** Run `brew trust vsmash/maiass` once — otherwise `brew upgrade` silently skips MAIASS and you stop getting updates.
 
 **One-line Install (curl):**
 ```bash
@@ -84,6 +86,11 @@ maiass patch
 | `--aihelp`, `--committhis-help`   | Shows help for committhis (AI commit message only) mode          |
 | `--aicv`, `--committhis-version`  | Shows the version for committhis mode                            |
 | `-co`, `-c`, `--commits-only`, `-ai-commits-only` | Enables "commits only" mode (AI commit messages, no versioning) |
+| `--create-gh-action`              | Create `.github/workflows/maiass-version-bump.yml` in the current repo (auto-bump on PR merge to develop) |
+| `--show-gl-excerpt`               | Print a GitLab CI excerpt to stdout to merge into `.gitlab-ci.yml`        |
+| `--show-bb-excerpt`               | Print a Bitbucket Pipelines excerpt to stdout to merge into `bitbucket-pipelines.yml` |
+
+All three CI flags substitute `MAIASS_DEVELOPBRANCH` (default `develop`) and `MAIASS_CI_FAIL_SILENTLY` (default `false`) into the rendered template at the moment they run, then exit. `--create-gh-action` will not overwrite an existing workflow file — it warns and skips.
 
 ---
 
@@ -168,7 +175,7 @@ MAIASS is released under the [GNU General Public License v3.0](LICENSE). Free an
 **Ready to streamline your Git workflow?** Install MAIASS today and experience intelligent version management with AI-powered automation.
 
 ```bash
-brew tap vsmash/maiass && brew install maiass
+brew tap --trust vsmash/maiass && brew install maiass
 ```
 
 ## 🆘 Support

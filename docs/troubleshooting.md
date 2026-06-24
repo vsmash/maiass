@@ -21,7 +21,8 @@
    ```
 4. **Reinstall if necessary**:
    ```bash
-   # Homebrew
+   # Homebrew (Homebrew 6.0+ needs the tap trusted, else upgrades/installs are skipped)
+   brew trust vsmash/maiass
    brew uninstall maiass && brew install maiass
    
    # Manual

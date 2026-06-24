@@ -47,9 +47,11 @@ ___
 
 **Homebrew (Recommended)**:
 ```bash
-brew tap vsmash/maiass
+brew tap --trust vsmash/maiass   # --trust is required on Homebrew 6.0+
 brew install maiass
 ```
+
+> **Already installed before Homebrew 6.0?** Run `brew trust vsmash/maiass` once — otherwise `brew upgrade` silently skips MAIASS and you stop getting updates.
 
 **Manual Installation**:
 ```bash
@@ -178,7 +180,7 @@ MAIASS is released under the [GNU General Public License v3.0](LICENSE). Free an
 **Ready to streamline your Git workflow?** Install MAIASS today and experience intelligent version management with AI-powered automation.
 
 ```bash
-brew tap vsmash/maiass && brew install maiass
+brew tap --trust vsmash/maiass && brew install maiass
 ```
 
 This project is licensed under the GNU General Public License v3.0 - see the [LICENSE](LICENSE) file for details.

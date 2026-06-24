@@ -29,7 +29,7 @@ MAIASS works perfectly without AI features:
 
 ### How do I install MAIASS?
 There are two main methods:
-1. **Homebrew (recommended)**: `brew tap vsmash/maiass && brew install maiass`
+1. **Homebrew (recommended)**: `brew tap --trust vsmash/maiass && brew install maiass` (the `--trust` is required on Homebrew 6.0+; if you tapped before 6.0, run `brew trust vsmash/maiass` once so `brew upgrade` doesn't skip MAIASS)
 2. **Manual installation**: Clone the repo and run `./install.sh`
 
 ### What dependencies does MAIASS require?

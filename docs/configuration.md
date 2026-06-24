@@ -102,6 +102,10 @@ MAIASS_BROWSER_PROFILE="Work"            # Default: Default
 | `MAIASS_LOGGING` | `false` | Enable logging to file |
 | `MAIASS_LOG_FILE` | `maiass.log` | Log file path |
 
+> `MAIASS_DEVELOPBRANCH` is also substituted into the CI workflow templates produced by `maiass --create-gh-action`, `--show-gl-excerpt`, and `--show-bb-excerpt` at the moment those commands run. The trigger fires on your actual develop branch, not the literal string `develop`. Defaults to `develop` when unset.
+
+> The generated workflow includes a `MAIASS_CI_FAIL_SILENTLY` env var (default `false`) that controls what happens when the push credential is missing: `false` fails the run with a clear message so it's noticed (the merge itself is unaffected — the workflow runs *after* merge); `true` skips with a warning and keeps the run green. It lives in the generated YAML — **not** in `.env.maiass` — so edit it there.
+
 > **Deprecated (MAI-63):** `MAIASS_STAGING_PULLREQUESTS` and
 > `MAIASS_MASTER_PULLREQUESTS` / `MAIASS_MAIN_PULLREQUESTS` are no longer read.
 > They only fed the removed post-bump deploy menu; setting them now has no

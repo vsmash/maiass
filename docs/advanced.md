@@ -187,6 +187,29 @@ find "$LOG_DIR" -name "maiass-*.log" -mtime +30 -delete
 
 ## CI/CD Integration
 
+### Generating CI templates (recommended)
+
+Rather than hand-writing the YAML below, let MAIASS generate a ready-to-use,
+auto-version-bump-on-merge workflow with your develop branch baked in:
+
+```bash
+maiass --create-gh-action   # writes .github/workflows/maiass-version-bump.yml
+maiass --show-gl-excerpt    # prints a GitLab CI excerpt to merge into .gitlab-ci.yml
+maiass --show-bb-excerpt    # prints a Bitbucket Pipelines excerpt
+```
+
+Each command substitutes `MAIASS_DEVELOPBRANCH` (default `develop`) into the
+trigger filter at the moment it runs. The generated workflow runs a preflight
+that checks for the push credential (GitHub `GH_PAT`, GitLab `GITLAB_TOKEN`,
+Bitbucket `BB_USERNAME`/`BB_APP_PASSWORD`). By default a missing credential
+**fails the run** with a clear message. The generated workflow contains a
+`MAIASS_CI_FAIL_SILENTLY` env var (default `false`) hardcoded in the YAML itself
+— **not** read from `.env.maiass` — that you edit to `true` to instead skip with
+a warning and keep the run green. `--create-gh-action` never overwrites an existing workflow file —
+it warns and skips, so delete the file first if you want a fresh copy.
+
+The hand-written examples below remain valid if you prefer to wire CI manually.
+
 ### GitHub Actions
 
 ```yaml
